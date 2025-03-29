@@ -11,9 +11,6 @@ from collections import Counter
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# The webdriver management will be handled by the browserstack-sdk
-# so this will be overridden and tests will run browserstack -
-# without any changes to the test files!
 options = ChromeOptions()
 options.set_capability('sessionName', 'BStack Sample Test')
 driver = webdriver.Chrome(options=options)
@@ -131,10 +128,4 @@ try:
     print(f"Repeated words: {repeated_words}")
 
 finally:
-    # Stop the driver
     driver.quit()
-
-
-# If hamberbureger exists click on it
-# hamburger_menu = "//button[@id='btn_open_hamburger']//*[name()='svg']"
-# scroll to //a[@cmp-ltrk='header_hamburguesa'][normalize-space()='Opinión']
